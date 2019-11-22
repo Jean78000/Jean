@@ -5,9 +5,8 @@ const images = ["image/image1.PNG",
               "image/image2.JPG",
               "image/image3.JPG",
               "image/image4.JPG",];
-let i = 0;
-
-function changeImg() {    
+let i;
+function changeImg() { 
     if (i < images.length - 1) 
          {i++;
             document.slide.src = images[i];
