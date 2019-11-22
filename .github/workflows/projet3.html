@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="fr">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Language" content="fr">
+    <meta name="Author" content="Kevin Collins">
+    <meta name="Publisher" content="Kevin">
+    <meta name="Reply-to" content="webmaster@mail.com">
+    <meta name="Keywords" content="Analyse d’audience, Référencement, PageRank, Webmaster ">
+    <meta name="Description" content="Voici le site de reservation de velo, ceci est un projet de la formation OpenClassroom">
+    <link rel="shortcut icon" type="image/png" href="image/favicon.PNG" />
+    <link rel="stylesheet" href="style.css">
+
+    
+    <title>VELO CLICK</title>
+</head>
+
+<body>
+    <header>
+        <section id="desktop">
+        <img class="logo" src="image/logo.png" alt="logo page d'accueil"/>
+        <h1>Bienvenue sur VELO CLICK</h1>
+            <nav class="menu">
+                <ul>
+                    <li>
+                     <a href="#diaporama"><i class="fas fa-home"></i>Accueil</a>
+                    </li>
+                    <li>
+                     <a href="#carte"><i class="fas fa-globe-europe"></i>Carte</a>
+                    </li>
+                    <li>
+                     <a href="#signature"><i class="fas fa-file-signature"></i>Formulaire</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+
+    <section id="diaporama">
+        <div id="slider">
+            <div class="titre">
+                <img src="image/image1.PNG" name="slide">
+                <h1 class="titre1" id="textSlider"> </h1>
+            </div>
+            <div class="bouttonDiapo">
+                <button onclick="precedent()">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button onclick="pause()"id="pauseButton">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <button onclick="play()"id="playButton">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button onclick="suivant()">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="carte">
+
+        <div class="map">
+
+
+        </div>
+
+        <div class="reservation">
+
+
+
+        </div>
+
+    </section>
+
+    <section id="signature">
+
+
+
+
+    </section>
+
+
+ 
+
+
+    <footer>
+        <p>Ceci est un projet de la formation <a href="https://openclassrooms.com">OpenClassrooms</a></p>
+    </footer>
+
+
+    <script src="https://kit.fontawesome.com/29259b33d5.js" crossorigin="anonymous"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+    <script src="jquery-3.4.1.min.js"></script>
+    <script type ="text/javascript" src="slider.js"></script>
+</body>
+
+
+
+</html>
