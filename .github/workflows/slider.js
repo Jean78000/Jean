@@ -6,14 +6,16 @@ const images = ["image/image1.PNG",
               "image/image3.JPG",
               "image/image4.JPG",];
 let i;
+var legendes = ['Bienvenue sur VELO CLICK','Vous pouvez utiliser les fleches directionelles du clavier', 'Cliquer sur un vélos là oû vous en desirez un','Puis remplissez le formulaire pour signer'];
+
 function changeImg() { 
     if (i < images.length - 1) 
          {i++;
             document.slide.src = images[i];
-            textSlider.textContent = 'indice de i = ' + i ;}                                                                  
+            textSlider.textContent = legendes[i];}                                                                  
     else {i = 0;
         document.slide.src = images[0];
-        textSlider.textContent = 'indice de i = ' + i ;}              
+        textSlider.textContent = legendes[i];}             
     myTimer = setTimeout("changeImg()", time);  
 }
 
@@ -21,24 +23,26 @@ function suivant() {
     if (i < images.length - 1) 
          {i++;
             document.slide.src = images[i];
-            textSlider.textContent = 'indice de i = ' + i ;}           
+            textSlider.textContent = legendes[i];}            
     else {i = 0;
         document.slide.src = images[0];
-        textSlider.textContent = 'indice de i = ' + i ;}              
+        textSlider.textContent = legendes[i];}               
     clearTimeout(myTimer);
     myTimer = setTimeout("changeImg()", time);
+    clearTimeout(myTimer);
 }
 
 function precedent() {
     if (i > 0) 
          {i = i - 1;    
             document.slide.src = images[i];
-            textSlider.textContent = 'indice de i = ' + i ;}            
+            textSlider.textContent = legendes[i];}            
     else {i = 3;
         document.slide.src = images[3];
-        textSlider.textContent = 'indice de i = ' + i ;}            
+        textSlider.textContent = legendes[i];}              
     clearTimeout(myTimer);
     myTimer = setTimeout("changeImg()", time);
+    clearTimeout(myTimer);
 }
 
 pause = () => {
