@@ -7,6 +7,7 @@ body {
 	background-color:white;
 	font-family: arial, sans-serif;
 	font-size: 100%;
+	width: 100%;
 }
 
 #desktop {
@@ -51,16 +52,17 @@ h1:first-letter {
 	color: black;
 }
 
-.diaporama {
-	width: 425px;
-	height: 425px;
+#diaporama {
+	height: 750px;
+	display: flex;
+	justify-content: center;
+	background-image: url(image/section1Background.JPG);
+	background-repeat: repeat;
 }
 
 #slider img {
-	width: 425px;
-	height: 300px;
-	display: block;
-	margin: auto;
+    width: 900px;
+    height: 500px;
 }
 
 .bouttonDiapo {
@@ -97,27 +99,24 @@ footer p {
 }
 
 #slider {
-	width: 425px;
-	height: 300px;
 	text-align: center;
-    margin: auto;
+	margin-top: 74px;
 }
 
-.titre {
-	width: 425px;
-	height: 300px;
-}
 
 #playButton {
     position: relative;
-	left: -7.12%;
+	left: -2.4%;
 	z-index: 1;
 }
 
 #pauseButton {
 	position: relative;
-	left: 7.5%;
+	left: 4.5%;
 	z-index: 2;
 }
 
+.titre {
+	color: #BA172E;
+}
 
