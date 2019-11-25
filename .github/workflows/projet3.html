@@ -13,8 +13,7 @@
     <meta name="Description" content="Voici le site de reservation de velo, ceci est un projet de la formation OpenClassroom">
     <link rel="shortcut icon" type="image/png" href="image/favicon.PNG" />
     <link rel="stylesheet" href="style.css">
-
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="crossorigin=""/>    
     <title>VELO CLICK</title>
 </head>
 
@@ -48,7 +47,7 @@
             </div>
             <div class="bouttonDiapo">
                 <button onclick="precedent()">
-                    <i class="fas fa-step-backward"></i>
+                    <i class="fas fa-arrow-left"></i>
                 </button>
                 <button onclick="pause()"id="pauseButton">
                     <i class="fas fa-pause"></i>
@@ -57,7 +56,7 @@
                     <i class="fas fa-play"></i>
                 </button>
                 <button onclick="suivant()">
-                    <i class="fas fa-step-forward"></i>
+                    <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
         </div>
@@ -65,15 +64,13 @@
     
     <section id="carte">
 
-        <div class="map">
+        <div id="mapID">
 
-
+        
         </div>
 
         <div class="reservation">
-
-
-
+            
         </div>
 
     </section>
@@ -93,13 +90,15 @@
         <p>Ceci est un projet de la formation <a href="https://openclassrooms.com">OpenClassrooms</a></p>
     </footer>
 
-
     <script src="https://kit.fontawesome.com/29259b33d5.js" crossorigin="anonymous"></script>
     <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
     <script src="jquery-3.4.1.min.js"></script>
     <script type ="text/javascript" src="slider.js"></script>
-</body>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="crossorigin=""></script>
+    <script src="map.js"></script>
 
+
+</body>
 
 
 </html>
