@@ -120,3 +120,7 @@ footer p {
 	color: #BA172E;
 }
 
+#mapID {
+	height: 400px;
+	width: 100%;
+}
