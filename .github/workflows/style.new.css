@@ -128,7 +128,28 @@ footer p {
 	height: 100%;
 	width: 100%;
 	border: none;
+	width: 60%;
+    margin-left: 20px;
 }
+
+input.name {
+    border-style: inset;
+}
+
+.details button {
+	margin: 0 auto;
+	margin-top: 40px!important;
+	padding: 3px;
+	display: flex;
+    justify-content: center;
+    width: 30%;
+    border-radius: 30px;
+}
+
+
+
+
+
 
 
 
