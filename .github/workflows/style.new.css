@@ -133,7 +133,16 @@ footer p {
 }
 
 input.name {
-    border-style: inset;
+	border-style: inset;
+	margin-left: 13%;
+}
+
+input.surname {
+	border-style: inset;
+}
+
+.details {
+	width: 24%;
 }
 
 .details button {
@@ -144,6 +153,15 @@ input.name {
     justify-content: center;
     width: 30%;
     border-radius: 30px;
+}
+
+#canvasDiv {
+	visibility: hidden;
+
+}
+
+#canvasDiv button {
+
 }
 
 
