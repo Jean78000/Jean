@@ -126,16 +126,15 @@ if (data[i].status !== 'OPEN') {
 MapCycle.init(45.75, 4.85, 10);
 
 // création du canvas
-var canv47 = document.getElementById('cvs47');
-var context47 = canv47.getContext('2d');
-context47.font="18pt Arial";
-context47.fillStyle="blueviolet";
-function XYcurseur(event) {
-   context47.clearRect(0,0,canv47.width,canv47.height); // efface le cadre
-   var XYrect = canv47.getBoundingClientRect();    // action avec le canvas et pas le context
-   var Xcurseur = Math.round(event.clientX - XYrect.left); 
-   var Ycurseur = Math.round(event.clientY - XYrect.top);
-   context47.fillText("Position de la souris",10, 35);
-   context47.fillText("X="+Xcurseur, 70, 70);
-   context47.fillText("Y="+Ycurseur, 70, 105);
-   };
+// création du canvas
+var canv3 = document.getElementById('cvs47');
+var context3 = canv3.getContext('2d');
+function gereclick(event) { 
+   var XYrect = canv3.getBoundingClientRect();    // action avec le canvas et pas le context
+   var Xcurseur = Math.round(event.clientX - XYrect.left); 
+   var Ycurseur = Math.round(event.clientY - XYrect.top);
+   context3.fillStyle= 'rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')' ; // = rgb ( R,V,B) (choix aléaloire)
+   context3.beginPath();
+   context3.arc(Xcurseur, Ycurseur, Math.random()*20,0, Math.PI*2);
+   context3.fill();
+   }; 
