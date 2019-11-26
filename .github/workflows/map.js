@@ -14,7 +14,7 @@ let MapCycle = {
     getApi: function() {
 
         /*let apiKey = new XMLHttpRequest();*/
-        let urlApi = "https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=abd717c168a5d21c3c4874d7c3ec7626a856ff2f";
+        let urlApi = "https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=6aee93e5cbf1cb5f8731b09eb837afa9adb6a9f0";
       /*  apiKey.open("GET", urlApi);
         apiKey.addEventListener("load", function (data) {
             if (apiKey.status >= 200 && apiKey.status < 400) { // Le serveur a réussi à traiter la requête
@@ -54,7 +54,7 @@ let MapCycle = {
     // Affiche les marqueurs
     displayMarkerOnMap: function() {
         let cycleCoord = [];
-        $.get("https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=abd717c168a5d21c3c4874d7c3ec7626a856ff2f", function(data) {
+        $.get("https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=6aee93e5cbf1cb5f8731b09eb837afa9adb6a9f0", function(data) {
             for (let i = 0; i < data.length; i++) {
                 let getStationName = data[i].name;
                 let getStationAddress = data[i].address;
