@@ -126,15 +126,14 @@ if (data[i].status !== 'OPEN') {
 MapCycle.init(45.75, 4.85, 10);
 
 // création du canvas
-// création du canvas
 var canv3 = document.getElementById('cvs47');
 var context3 = canv3.getContext('2d');
 function gereclick(event) { 
    var XYrect = canv3.getBoundingClientRect();    // action avec le canvas et pas le context
    var Xcurseur = Math.round(event.clientX - XYrect.left); 
    var Ycurseur = Math.round(event.clientY - XYrect.top);
-   context3.fillStyle= 'rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')' ; // = rgb ( R,V,B) (choix aléaloire)
+   context3.fillStyle= 'rgb('+Math.floor(Math.random()*255); // = rgb (r)
    context3.beginPath();
-   context3.arc(Xcurseur, Ycurseur, Math.random()*20,0, Math.PI*2);
+   context3.arc(Xcurseur, Ycurseur, 1.5,0, 360);
    context3.fill();
    }; 
