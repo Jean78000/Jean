@@ -63,39 +63,26 @@
     </section>
     
     <section id="carte">
-
-        <div id="mapID">
-
-        
+        <div id="mapEtFormulaire">
+            <div id="mapID"></div>
+            <div class="details">
+             <fieldset>
+              <legend><h1 class="stationDetail">Details de la station</h1></legend>
+              <h2 class="stationAdresse">Adresse :</h2>
+              <input id="adresse">
+              <h2 class="stationPlace">Places dispo :<input id="placeDispo"></h2>
+              <h2 class="stationVelosDispo">Velos dispo :<input id="veloDispo"></h2>
+              <h3 class="nom">Nom :<input class="name"></h3>
+              <h3 class="prenom">Prenom :<input class="surname"></h3>
+              <button onclick="canvas()">Reserver</button>
+              </fieldset>
+            </div> 
+        </div> 
+        <div class="signature">
+            <div id="canvasDiv"></div>
+            <button id="bouttonSigner" onclick="signer()">Signer</button>
         </div>
-
-        <div class="details">
-        <h1 class="stationDetail">Details de la station</h1>
-        <h2 class="stationAdresse">Adresse :<input id="adresse"></h2>
-        <h2 class="stationPlace">Places dispo :<input id="placeDispo"></h2>
-        <h2 class="stationVelosDispo">Velos dispo :<input id="veloDispo"></h2>
-        <h3 class="nom">Nom :<input class="name"></h2>
-        <h3 class="prenom">Prenom :<input class="surname"></h2>
-        <button onclick="canvas()">Reserver</button>
-        <div id="canvasDiv">
-            <button onclick="signer()">Signer</button>
-        </div>
-        </canvas>
-      
-        </div>
-
     </section>
-
-    <section id="signature">
-
-
-
-
-    </section>
-
-
- 
-
 
     <footer>
         <p>Ceci est un projet de la formation <a href="https://openclassrooms.com">OpenClassrooms</a></p>
@@ -111,5 +98,3 @@
 
 </body>
 
-
-</html>
