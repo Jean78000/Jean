@@ -243,27 +243,49 @@ storage();
 
 
 
-timer= () => {
 
-let min = 0;
-let sec = 10;
-    
-setInterval(function(){
-    document.getElementById("timer").innerHTML = "Il ne vous reste plus que "+min +" minutes "+" et " + sec +" secondes" ;
-    sec--;
-    if(sec == 0){min--;
-                sec = 60;
-                }
-    else if (min == 0 && sec == 0) {
-                clearInterval();
-                document.getElementById("timer").innerHTML = "Votre session est expirée";
-                storage.removeItem(adresse);
-                storage.removeItem(placeDispo);
-                storage.removeItem(veloDispo);    
-                }},1000);
+let current_level = 1200;
+
+function timer() {
+
+    let days = Math.floor(current_level / 86400);
+    let remainingDays = current_level - (days * 86400);
+
+    let hours = Math.floor(remainingDays / 3600);
+    let remainingHours = remainingDays - (hours * 3600);
+
+    let minutes = Math.floor(remainingHours / 60);
+    let remainingMinutes = remainingHours - (minutes * 60);
+
+    let seconds = remainingMinutes;
+    document.getElementById("timer").innerHTML = "Il ne vous reste plus que " + minutes + " minutes " + " et " + seconds + " secondes";
+    current_level--;
+
+    if (current_level == 0) {
+        document.getElementById('timer').innerHTML = "La session est expirée";
+        clearInterval(countdownTimer);
+        sessionStorage.removeItem('adresse');
+        sessionStorage.removeItem('placeDispo');
+        sessionStorage.removeItem('veloDispo');
+    }
+
+    var countdownTimer = setInterval(timer, 1000);
+
+    // Date.now();  ??? //timestamp  ??
+
+    this.date = new Date(this.date);
+    var timesTampExp = current_level + Date.now();
+    sessionStorage.setItem('timesTampExp', timesTampExp);
+    var compare = (timesTampExp - Date.now());
+
+    if (parseInt(compare) < 0) {
+        sessionStorage.removeItem('adresse');
+        sessionStorage.removeItem('placeDispo');
+        sessionStorage.removeItem('veloDispo');
+    }
+
+    else { current_level - parseInt(compare); }
+
 }
-    
-timer();
-
 
 
