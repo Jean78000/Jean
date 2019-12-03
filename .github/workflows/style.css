@@ -5,15 +5,22 @@ html {
 body {
     margin: 0;
 	background-color:white;
-	font-family: arial, sans-serif;
+	font-family: 'Gupter', serif;
 	font-size: 100%;
 	width: 100%;
 }
 
+button {
+	font-family: 'Gupter', serif;
+}
+
 #desktop {
 	display: flex;
-	justify-content: center;
-	margin: 35px;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    margin: auto 0;
+	z-index: 10000;	
 	justify-content: space-around;
 }
 
@@ -28,6 +35,11 @@ header h1 {
 	font-size: 20px;
 	text-align: center;
 	text-transform: uppercase;
+	margin-top: 25px;
+}
+
+header .menu {
+	margin-top: 12px;
 }
 
 h1:first-letter {
@@ -53,6 +65,7 @@ h1:first-letter {
 }
 
 #diaporama {
+	padding-top: 27px;
 	height: 750px;
 	display: flex;
 	justify-content: center;
@@ -71,19 +84,16 @@ h1:first-letter {
 
 #carte {
 	width: 100%;
-	height: 600px;
-	display: flex;
-	margin-top: 50px;
+	margin-top: 20px;
 }
 
-.map  {
-	width: 50%;
-	height: 100%;
-	border: 1px groove black;
+#mapEtFormulaire {
+	width: 100%;
+    display: flex;
 }
 
-.reservation  {
-	width: 50%;
+.mapDetails  {
+	width: 30%;
 	height: 100%;
 	border: 1px groove black;
 }
@@ -103,24 +113,211 @@ footer p {
 	margin-top: 74px;
 }
 
+#prec {
+    position: absolute;
+    left: 15.7%;
+    top: 45%;
+    padding: 0;
+    border-radius: 82px 0px 0px 82px;
+    width: 71px;
+    height: 90px;
+	border-width: 0px 0px 0px 0px;
+	background-color: rgba(32, 30, 32, 0.6);
+}
+
+#suiv {
+	position: absolute;
+    top: 45%;
+    right: 15.7%;
+    padding: 0;
+    border-radius: 0px 82px 82px 0px;
+    width: 71px;
+    height: 90px;
+	border-width: 0px 0px 0px 0px;
+	background-color: rgba(32, 30, 32, 0.6);
+}
 
 #playButton {
-    position: relative;
-	left: -2.4%;
-	z-index: 1;
+    position: absolute;
+    left: 48.6%;
+    bottom: 0.5%;
+    width: 82px;
+	height: 59px;
+	padding: 0px 0px 0px 0px;
+	border-width: 0px 0px 0px 0px;
+	background-color: rgba(32, 30, 32, 0.6);
 }
 
 #pauseButton {
-	position: relative;
-	left: 4.5%;
-	z-index: 2;
+    position: absolute;
+    left: 48.6%;
+    z-index: 1;
+    bottom: 0.5%;
+    width: 82px;
+	height: 59px;
+	padding: 0px 0px 0px 0px;
+	border-width: 0px 0px 0px 0px;
+	background-color: rgba(32, 30, 32, 0.6);
 }
 
 .titre {
 	color: #BA172E;
+	background-color: rgb(231, 224, 234);
+}
+
+#textSlider {
+	margin-top: 0px;
+	border: 4mm ridge rgba(211, 210, 211, 0.6);
 }
 
 #mapID {
-	height: 400px;
-	width: 100%;
+	position: relative;
+	height: 463px;
+    width: 70%;
+}
+
+#carte h2 {
+    font-size: 18px;
+	height: 38px;
+}
+
+.details input {
+	height: 29px;
+	border: none;
+}
+
+#placeDispo {
+	margin-left: 12px;
+	width: 6%;
+}
+
+#veloDispo {
+	margin-left: 22px;
+	width: 6%;
+}
+
+#name {
+	border-style: inset;
+    margin-left: 9.5%;
+    width: 38%;
+}
+
+#surname {
+	border-style: inset;
+	margin-left: 20px;
+}
+
+fieldset {
+    height: 399px;
+}
+
+#adresse {
+	width: 419px;
+	margin-left: 0px;
+	height: 20px;
+	font-size: 15px;
+}
+
+.stationAdresse {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.details {
+    width: 30%;
+    margin-top: 0px;
+    height: 430px;
+	border: 1rem solid;
+	background-color:#ffced47a;
+}
+
+.details button {
+	margin: 0 auto;
+	margin-top: 52px!important;
+	padding: 3px;
+	display: flex;
+    justify-content: center;
+    width: 30%;
+	border-radius: 30px;
+	font-size: 1rem;
+}
+
+#canvasDiv {
+	visibility: hidden;
+}
+
+#canvas {
+	margin: 0 auto;
+	display: flex;
+	border: 4mm ridge rgba(189, 165, 199, 0.6);
+}
+
+.signature {
+	width: 750px;
+	margin: 0 auto;
+	margin-top: 20px;
+	visibility: hidden;
+}
+
+#bouttonSigner {
+    margin: 0 auto;
+    display: flex;
+    width: 16%;
+    padding-left: 39px;
+	margin-top: 5px;
+	visibility: hidden;
+	border-radius: 30px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size: 1rem;
+}
+
+footer {
+	margin-top: 50px;
+	font-size: 1rem;
+}
+
+#arrow {
+    font-size: 181px;
+    position: absolute;
+    bottom: -206%
+	left: 78%;
+	visibility: hidden;
+}
+
+#reservationID {
+	display: flex;
+    justify-content: center;
+}
+
+#titreReservation {
+	text-align: center;
+}
+
+.nomStorage {
+	margin-right: 50px;
+}
+
+.prenomStorage {
+	margin-right: 50px;
+}
+
+#surnameStorage {
+	width: 11rem;
+	border: none;
+}
+
+#nameStorage {
+	width: 11rem;
+	border: none;
+}
+
+.stationAdresseStorage {
+    margin-top: -10px;
+}
+
+#adressStorage {
+	width: 20rem;
+	height: 93px;
+	border: none;
 }
