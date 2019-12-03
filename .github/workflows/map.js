@@ -245,25 +245,25 @@ storage();
 
 timer= () => {
 
-let min = 19;
-let sec = 59;
-
+let min = 0;
+let sec = 10;
+    
 setInterval(function(){
     document.getElementById("timer").innerHTML = "Il ne vous reste plus que "+min +" minutes "+" et " + sec +" secondes" ;
     sec--;
     if(sec == 0){min--;
                 sec = 60;
-                if (min == 0)
-                        {min = 2;}}
-        },1000);
-
-if ((sec == 0) && (min == 0)) {
-        document.getElementById("timer").innerHTML = "Votre session est expirée" ;
-        storage.removeItem(adresse);
-        storage.removeItem(placeDispo);
-        storage.removeItem(veloDispo);        }
+                }
+    else if (min == 0 && sec == 0) {
+                clearInterval();
+                document.getElementById("timer").innerHTML = "Votre session est expirée";
+                storage.removeItem(adresse);
+                storage.removeItem(placeDispo);
+                storage.removeItem(veloDispo);    
+                }},1000);
 }
-
+    
 timer();
+
 
 
