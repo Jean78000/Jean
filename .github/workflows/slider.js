@@ -1,3 +1,5 @@
+
+
 window.onload = changeImg;   /*implemente changeImg*/
 let myTimer;
 const time = 5000;
@@ -67,7 +69,7 @@ play = () =>{
     }
   });
 
-
+  
 
 
 
