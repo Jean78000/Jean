@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="fr">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Language" content="fr">
+    <meta name="Author" content="Kevin Collins">
+    <meta name="Publisher" content="Kevin">
+    <meta name="Reply-to" content="webmaster@mail.com">
+    <meta name="Keywords" content="Analyse d’audience, Référencement, PageRank, Webmaster ">
+    <meta name="Description"
+        content="Site de reservation de velo à titre educatif c'est un projet de la formation DWJ d'OpenClassroom">
+    <link href="https://fonts.googleapis.com/css?family=Gupter&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="image/favicon.PNG" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <title>VELO CLICK</title>
+</head>
+
+<body>
+    <header>
+        <section id="desktop">
+            <img class="logo" src="image/logo.png" alt="logo page d'accueil" />
+            <h1>Bienvenue sur VELO CLICK</h1>
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a href="#diaporama"><i class="fas fa-home"></i>Diaporama</a>
+                    </li>
+                    <li>
+                        <a href="#carte"><i class="fas fa-globe-europe"></i>Map</a>
+                    </li>
+                    <li>
+                        <a href="#veloDispo"><i class="fas fa-file-signature"></i>Reserver</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+
+    <section id="diaporama">
+        <div id="slider">
+            <div class="titre">
+                <img src="image/image1.PNG" name="slide">
+                <h1 class="titre1" id="textSlider"> </h1>
+            </div>
+            <div class="bouttonDiapo">
+                <button id="prec" onclick="precedent()">
+                    <i class="fas fa-arrow-left fa-3x"></i>
+                </button>
+                <button id="pauseButton" onclick="pause()">
+                    <i class="fas fa-pause fa-3x"></i>
+                </button>
+                <button id="playButton" onclick="play()">
+                    <i class="fas fa-play fa-3x"></i>
+                </button>
+                <button id="suiv" onclick="suivant()">
+                    <i class="fas fa-arrow-right fa-3x"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="carte">
+        <div id="mapEtFormulaire">
+            <div id="mapID"></div>
+            <div class="details">
+                <fieldset>
+                    <legend>
+                        <h1 class="stationDetail">Details de la station</h1>
+                    </legend>
+                    <h2 class="stationAdresse">Adresse :</h2>
+                    <input id="adresse">
+                    <h2 class="stationPlace">Places dispo :<input id="placeDispo"></h2>
+                    <h2 class="stationVelosDispo">Velos dispo :<input id="veloDispo"></h2>
+                    <h3 class="nom">Nom :<input id="name"></h3>
+                    <h3 class="prenom">Prenom :<input id="surname"></h3>
+                    <button onclick="booking()">Reserver</button>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+    <div class="signature">
+        <div id="canvasDiv"></div>
+        <button id="bouttonSigner" onclick="signer()">Signer</button>
+    </div>
+    <div id="reservation">
+        <fieldset>
+            <legend>
+                <div id="titreReservation">
+                    <h1>Votre reservation</h1>
+                </div>
+            </legend>
+            <div id="reservationID">
+                <h2 class="nomStorage">Nom :<input id="nameStorage"></h2>
+                <h2 class="prenomStorage">Prenom :<input id="surnameStorage"></h2>
+                <h2 class="stationAdresseStorage">Adresse :<input id="adressStorage"></h2>
+                <div id="timer"></div>
+            </div>
+        </fieldset>
+    </div>
+
+    <footer>
+        <p>Ce site est un projet de la formation <a href="https://openclassrooms.com">OpenClassrooms</a></p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/29259b33d5.js" crossorigin="anonymous"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+    <!--<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>-->
+    <script src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="slider.js" async></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <script src="map.js"></script>
+
+
+</body>
+
+
+</html>

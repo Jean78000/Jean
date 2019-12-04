@@ -1,0 +1,342 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+	background-color:white;
+	font-family: 'Gupter', serif;
+	font-size: 100%;
+	width: 100%;
+}
+
+button {
+	font-family: 'Gupter', serif;
+}
+
+#desktop {
+	display: flex;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    margin: auto 0;
+	z-index: 10000;	
+	justify-content: space-around;
+	box-shadow: 5px 5px 5px grey;
+    -webkit-box-shadow: -4px 5px 11px 5px #ddd8d7;
+}
+
+.logo {
+	background-color: white;
+	padding: 0 10px;
+	width: 80px;
+	margin: 0;
+}
+
+header h1 {
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 25px;
+}
+
+header .menu {
+	margin-top: 12px;
+}
+
+h1:first-letter {
+	color: #BA172E;
+}
+
+.menu ul {
+	display: flex;
+	list-style-type: none;
+}
+
+.menu li {
+	list-style-type: none;
+	font-size: 1.2em;
+	padding-left: 50px;
+}
+
+.menu li a {
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: black;
+}
+
+#diaporama {
+	height: 623px;
+	position: relative;
+}
+
+#slider img {
+	width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.bouttonDiapo {
+	text-align: center;
+}
+
+#carte {
+    width: 100%;
+    margin-top: 12px;
+	height: 465px;
+}
+
+#mapEtFormulaire {
+	width: 100%;
+    display: flex;
+}
+
+.mapDetails  {
+	width: 30%;
+	height: 100%;
+	border: 1px groove black;
+}
+
+footer p {
+	text-align: center;
+}
+
+.fas {
+	color: #BA172E;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+#slider {
+	text-align: center;
+	width: 100%;
+}
+
+#prec {
+    position: absolute;
+    left: 0%;
+    top: 40%;
+    padding: 0;
+    border-radius: 82px 0px 0px 82px;
+    width: 71px;
+    height: 90px;
+	border-width: 0px 0px 0px 0px;
+	background-color: rgba(32, 30, 32, 0.6);
+}
+
+#suiv {
+	position: absolute;
+    top: 40%;
+    right: 0%;
+    padding: 0;
+    border-radius: 0px 82px 82px 0px;
+    width: 71px;
+    height: 90px;
+	border-width: 0px 0px 0px 0px;
+	background-color: rgba(32, 30, 32, 0.6);
+}
+
+#playButton {
+    position: absolute;
+    left: 47.6%;
+    bottom: 12.7%;
+    width: 82px;
+    height: 44px;
+    padding: 0px 0px 0px 0px;
+    border-width: 0px 0px 0px 0px;
+    background-color: rgba(32, 30, 32, 0.6);
+}
+
+#pauseButton {
+    position: absolute;
+    z-index: 1;
+    left: 47.6%;
+	bottom: 12.7%;
+	width: 82px;
+    height: 44px;
+	padding: 0px 0px 0px 0px;
+	border-width: 0px 0px 0px 0px;
+	background-color: rgba(32, 30, 32, 0.6);
+}
+
+.titre {
+	color: #BA172E;
+}
+
+#textSlider {
+	margin: 0 auto;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px grey;
+	-webkit-box-shadow: -4px 10px 50px 5px #a08b87;
+	width: 83%;
+	height: 40px;
+	line-height: 36px;
+	margin-top: 10px;
+}
+
+#mapID {
+	position: relative;
+	height: 463px;
+    width: 70%;
+}
+
+#carte h2 {
+    font-size: 18px;
+	height: 38px;
+}
+
+.details input {
+	height: 29px;
+	border: none;
+}
+
+#placeDispo {
+	margin-left: 12px;
+	width: 6%;
+}
+
+#veloDispo {
+	margin-left: 22px;
+	width: 6%;
+}
+
+#name {
+	border-style: inset;
+    margin-left: 9.5%;
+    width: 38%;
+}
+
+#surname {
+	border-style: inset;
+	margin-left: 20px;
+}
+
+fieldset {
+    height: 399px;
+}
+
+#adresse {
+	width: 419px;
+	margin-left: 0px;
+	height: 20px;
+	font-size: 15px;
+}
+
+.stationAdresse {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.details {
+    width: 30%;
+    margin-top: 0px;
+    height: 430px;
+	border: 1rem solid;
+	background-color: #faf1fa;
+}
+
+.details button {
+    margin: 0 auto;
+    margin-top: 49px!important;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    width: 34%;
+    border-radius: 30px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#canvasDiv {
+	visibility: hidden;
+	background-image:url("https://zupimages.net/up/19/49/j69v.jpeg");
+}
+
+#canvas {
+    margin: 0 auto;
+    display: flex;
+    border: 4mm ridge rgb(219, 211, 209);
+    box-shadow: 5px 5px 5px grey;
+	-webkit-box-shadow: -4px 10px 50px 5px #a08b87;
+	background-color:white;
+}
+
+.signature {
+	margin: 0 auto;
+    margin-top: 23px;
+	margin-bottom: 20px;
+	visibility: hidden;
+}
+
+#bouttonSigner {
+    margin: 0 auto;
+    display: flex;
+	width: 12%;
+    padding-left: 69px;
+	margin-top: 5px;
+	visibility: hidden;
+	border-radius: 30px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+footer {
+	margin-top: 50px;
+	font-size: 1rem;
+}
+
+#reservationID {
+	display: flex;
+    justify-content: center;
+}
+
+.nomStorage {
+	margin-right: 50px;
+}
+
+.prenomStorage {
+	margin-right: 50px;
+}
+
+#surnameStorage {
+	width: 11rem;
+	border: none;
+}
+
+#nameStorage {
+	width: 11rem;
+	border: none;
+}
+
+.stationAdresseStorage {
+    margin-top: -10px;
+}
+
+#adressStorage {
+	width: 20rem;
+	height: 93px;
+	border: none;
+}
+
+#reservation {
+	width: 97.5%;
+    border: solid 1px grey;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px grey;
+    -webkit-box-shadow: -4px 10px 50px 5px blue;
+    margin-left: 20px;
+}
+
+#reservation legend {
+	margin: 0 auto;
+}
+
+#reservation fieldset {
+    height: 201px;
+	margin-bottom: 38px;
+	margin-left: 10px;
+    margin-right: 10px;
+}
