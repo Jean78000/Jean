@@ -13,7 +13,7 @@ let MapCycle = {
     // Appel à l'API jcdecaux
     getApi() {
         /*let apiKey = new XMLHttpRequest();*/
-        let urlApi = "https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=abd717c168a5d21c3c4874d7c3ec7626a856ff2f";
+        let urlApi = "https://api.jcdecaux.com/vls/v1/stations?contract=Bruxelles&apiKey=abd717c168a5d21c3c4874d7c3ec7626a856ff2f";
         /*  apiKey.open("GET", urlApi);
         apiKey.addEventListener("load", function (data) {
         if (apiKey.status >= 200 && apiKey.status < 400) { // Le serveur a réussi à traiter la requête
@@ -53,7 +53,7 @@ let MapCycle = {
     // Affiche les marqueurs
     afficheMarqueur: function () {
         let cycleCoord = [];
-        $.get("https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=abd717c168a5d21c3c4874d7c3ec7626a856ff2f", function (data) {
+        $.get("https://api.jcdecaux.com/vls/v1/stations?contract=Bruxelles&apiKey=abd717c168a5d21c3c4874d7c3ec7626a856ff2f", function (data) {
             for (let i = 0; i < data.length; i++) {                 // parcours le json
                 let getStationName = data[i].name;                     // data : variable qui contient les données du fichier que l'on parcourt avec .lenght
                 let getStationAddress = data[i].address;                // on parcourt les .noeuds du json
@@ -119,7 +119,7 @@ let MapCycle = {
     }
 };
 
-MapCycle.init(45.75, 4.85, 10);
+MapCycle.init(50.85, 4.35, 12);
 
 // création du canvas
 
@@ -158,9 +158,9 @@ $('#canvas').mouseleave(function (e) {              // quand le curseur de la so
     paint = false;
 });
 
-var clickX = new Array();                           // tableau qui contient tout les points
-var clickY = new Array();
-var clickDrag = new Array();
+const clickX = new Array();                           // tableau qui contient tout les points
+const clickY = new Array();
+const clickDrag = new Array();
 var paint;
 
 function addClick(x, y, dragging) {
@@ -171,7 +171,7 @@ function addClick(x, y, dragging) {
 
 function redraw() {                      // redessine le parcours des points
     context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
-    
+
     context.strokeStyle = "black";                // couleur de remplissage de la ligne
     context.lineJoin = "round";                     // style de jointure entre les lignes
     context.lineWidth = 5;                          // epaisseur de la ligne
@@ -190,19 +190,14 @@ function redraw() {                      // redessine le parcours des points
 }
 
 
-booking = () => {
-    document.getElementById('canvasDiv').style.visibility = 'visible';
-    document.getElementById('bouttonSigner').style.visibility = 'visible';
-}
-
 
 signer = () => {
-
     let prenom = $('#name').val();
     let nom = $('#surname').val();
     let adress = $('#adresse').val();
     let placeDispo = $('#placeDispo').val();
     let veloDispo = $('#veloDispo').val();
+
 
     localStorage.setItem('name', prenom);
     localStorage.setItem('surname', nom);
@@ -214,21 +209,41 @@ signer = () => {
     $('#nameStorage').val(nom);
     $('#adressStorage').val(adress);
 
+    $('#myModal').modal('hide');
+
+    let modalVeloDispo = "Il n'y a plus de vélo dispo";
+    let modalBodyText = "Veuillez choisir une autre station";
+    if (veloDispo == 0) {
+        // document.getElementById("bookingfull").innerHTML = "Il n'y a plus de vélo dispo";
+        //alert("Il n'y a plus de vélo dispo");
+        exampleModalLongTitle.textContent = modalVeloDispo;
+        modalBody.textContent = modalBodyText;
+        $('#myModal').modal('show');
+    }
+
+    document.getElementById('signature').style.display = 'none';
+
+    let titreSignatureFailed = "La signature n'est pas conforme";
+    let modalBodySignature = "La taille recommandée minimale est de 20 pixels";
+    if ((clickX.length || clickY.length) <= 20) {
+        exampleModalLongTitle.textContent = titreSignatureFailed;
+        modalBody.textContent = modalBodySignature;
+        $('#myModal').modal('show');
+        //  alert("La signature n'est pas conforme");
+        document.getElementById('signature').style.display = 'block';
+        context.clearRect(0, 0, 357, 200);  //nettoie le canvas
+        clickX.length = 0;
+        clickY.length = 0;
+        clickDrag.length = 0;  //drag: tableau qui retiens si la souris était appuyé d'un point à l'autre pour savoir si il faut faire un trait ou laisser un espace.
+    }
     context.clearRect(0, 0, 357, 200);  //nettoie le canvas
     clickX.length = 0;
     clickY.length = 0;
-    clickDrag.length = 0;  //drag: tableau qui retiens si la souris était appuyé d'un point à l'autre pour savoir si il faut faire un trait ou laisser un espace.
-
-    if (veloDispo == 0) {
-       // document.getElementById("bookingfull").innerHTML = "Il n'y a plus de vélo dispo";
-       alert("Il n'y a plus de vélo dispo");
-    }
+    clickDrag.length = 0;
 }
-//mettre une alerte si l'utilisateur n'a pas signé
-//si x et y sont inferieur a xxx pixel : alerte votre signature n'est pas valide
+
 
 storage = () => {
-
     let ls = localStorage.getItem('surname');
     document.getElementById('surnameStorage').value = ls;
     let ls1 = localStorage.getItem('name');
@@ -240,18 +255,60 @@ storage = () => {
     let ls4 = sessionStorage.getItem('veloDispo');
     document.getElementById('veloDispo').value = ls4;
 }
-
 storage();
 
 
+let current_level;
+let countdownTimer = null;
 
-// timer();   // difference avec window.onload = timer; ???
+if (sessionStorage.getItem('timer')) {
+    current_level = Math.round((sessionStorage.getItem('timer') - Date.now()) / 1000);
+    countdownTimer = setInterval('timer()', 1000);
+} else {
+    current_level = 1200;
+}
 
+let nomManquantTitre = "Champ Nom vide"
+let prenomManquantTitre = "Champ Prenom vide"
 
+let nomManquant = "Veuillez renseigner votre nom";
+let PrenomManquant = "Veuillez renseigner votre prenom";
 
-let current_level = 1200;
+booking = () => {
+    document.getElementById('signature').style.display = 'block';
+    countdownTimer = setInterval('timer()', 1000);
+    window.scrollBy(0, 300);
+    if (window.matchMedia("(max-width: 500px)").matches) {
+        window.scrollBy(0, 150);
+    }
 
-function timer() {
+    if ($('#name').val() == ("")) {
+        exampleModalLongTitle.textContent = nomManquantTitre;
+        modalBody.textContent = nomManquant;
+        $('#myModal').modal('show');
+    }
+    if ($('#surname').val() == ("")) {
+        exampleModalLongTitle.textContent = prenomManquantTitre;
+        modalBody.textContent = PrenomManquant;
+        $('#myModal').modal('show');
+    }
+}
+
+cancell = () => {
+    sessionStorage.removeItem('adresse');
+    sessionStorage.removeItem('veloDispo');
+    sessionStorage.removeItem('timer');
+    localStorage.removeItem('name');
+    localStorage.removeItem('surname');
+    clearInterval(countdownTimer);
+    $('#surnameStorage').val("");
+    $('#nameStorage').val("");
+    $('#adressStorage').val("");
+    document.getElementById('timer').innerHTML = "La session est expirée";
+    // alerte a l utilisateur votre reservation est suprimer
+}
+
+timer = () => {
     let days = Math.floor(current_level / 86400);
     let remainingDays = current_level - (days * 86400);
 
@@ -262,36 +319,52 @@ function timer() {
     let remainingMinutes = remainingHours - (minutes * 60);
 
     let seconds = remainingMinutes;
-    document.getElementById("timer").innerHTML = "Il ne vous reste plus que " + minutes + " minutes " + " et " + seconds + " secondes";
     current_level--;
+    document.getElementById("timer").innerHTML = "Validitée de la reservation : " + minutes + " minutes " + " et " + seconds + " secondes";
 
-    if (current_level == 0) {
-        document.getElementById('timer').innerHTML = "La session est expirée";
+    if (window.matchMedia("(max-width: 500px)").matches) {
+        document.getElementById("timer").textContent = "Validitée : " + minutes + " min " + " et " + seconds + " s";
+    }
+
+    //if (current_level == 0) {
+    //  document.getElementById('timer').innerHTML = "La session est expirée";
+    //    clearInterval(countdownTimer);
+    // }
+
+    var timesExp = (current_level * 1000) + Date.now();
+    sessionStorage.setItem('timer', timesExp);
+    var compare = (timesExp - Date.now());
+
+    if (parseInt(compare) <= 0) {
         clearInterval(countdownTimer);
         sessionStorage.removeItem('adresse');
         sessionStorage.removeItem('placeDispo');
         sessionStorage.removeItem('veloDispo');
+        sessionStorage.removeItem('timer');
+        localStorage.removeItem('name');
+        localStorage.removeItem('surname');
+        document.getElementById('timer').innerHTML = "La session est expirée";
     }
+
+    //else { current_level - parseInt(compare); }
 
 }
 
-var countdownTimer = setInterval('timer()', 1000);
+if (window.matchMedia("(max-width: 500px)").matches) {
+    document.querySelector('.stationDetail').textContent = "Details";
+    document.querySelector('.title').textContent = "Reservation";
+    // document.querySelector('.menu').style.display = 'none';
 
 
-    // Date.now();  ??? //timestamp  ??
+    $('.mobile').click(function () {
+        menu = document.createElement('menu');
+        menu.setAttribute('width', 357);
+        menu.setAttribute('height', 200);
+        $('.menu').slideToggle();
 
-  //  this.date = new Date(this.date);
-  //  var timesTampExp = current_level + Date.now();
-  //  sessionStorage.setItem('timesTampExp', timesTampExp);
- //     var compare = (timesTampExp - Date.now());
+    });
 
-  //    if (parseInt(compare) < 0) {
-   //       sessionStorage.removeItem('adresse');
-    //      sessionStorage.removeItem('placeDispo');
-    //      sessionStorage.removeItem('veloDispo');
-   //   }
-
-  //    else { current_level - parseInt(compare); }
+}
 
 
 
