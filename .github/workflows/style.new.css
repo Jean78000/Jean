@@ -1,0 +1,592 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+	background-color:white;
+	font-family: 'Gupter', serif;
+	font-size: 100%;
+	width: 100%;
+}
+
+button {
+	font-family: 'Gupter', serif;
+}
+
+#titreEtMenu {
+	display: flex;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    margin: auto 0;
+	z-index: 10000;	
+	justify-content: space-around;
+	box-shadow: 5px 5px 5px grey;
+    -webkit-box-shadow: -4px 5px 11px 5px #ddd8d7;
+}
+
+.logo {
+	background-color: white;
+	padding: 0 10px;
+	width: 80px;
+	margin: 0;
+}
+
+header h1 {
+	font-size: 29px;
+    margin-left: 56px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+
+.menu {
+	font-size: 19px;
+}
+
+header .menu {
+	margin-top: 12px;
+}
+
+h1:first-letter {
+	color: #BA172E;
+}
+
+.menu ul {
+	display: flex;
+	list-style-type: none;
+	margin-top: 15px;
+}
+
+.menu li {
+	list-style-type: none;
+	font-size: 1.2em;
+	padding-left: 50px;
+}
+
+.menu li a {
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: black;
+}
+
+#diaporama {
+	height: 623px;
+	position: relative;
+}
+
+#slider img {
+	width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.bouttonDiapo {
+	text-align: center;
+}
+
+#carte {
+    width: 100%;
+    margin-top: 12px;
+	height: 465px;
+}
+
+#mapEtFormulaire {
+	width: 100%;
+    display: flex;
+}
+
+.mapDetails  {
+	width: 30%;
+	height: 100%;
+	border: 1px groove black;
+}
+
+.prenom {
+	margin-top: 7px;
+}
+
+footer p {
+	text-align: center;
+}
+
+.fas {
+	color: #BA172E;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+#slider {
+	text-align: center;
+	width: 100%;
+}
+
+#prec {
+    position: absolute;
+    left: 0%;
+    top: 40%;
+    padding: 0;
+    border-radius: 82px 0px 0px 82px;
+    width: 71px;
+    height: 90px;
+	border-width: 0px 0px 0px 0px;
+	background-color: rgba(32, 30, 32, 0.6);
+}
+
+#suiv {
+	position: absolute;
+    top: 40%;
+    right: 0%;
+    padding: 0;
+    border-radius: 0px 82px 82px 0px;
+    width: 71px;
+    height: 90px;
+	border-width: 0px 0px 0px 0px;
+	background-color: rgba(32, 30, 32, 0.6);
+}
+
+#playButton {
+    position: absolute;
+    left: 47.6%;
+	bottom: 11.4%;
+    width: 82px;
+    height: 52px;
+    padding: 0px 0px 0px 0px;
+    border-width: 0px 0px 0px 0px;
+    background-color: rgba(32, 30, 32, 0.6);
+}
+
+#pauseButton {
+    position: absolute;
+    z-index: 1;
+    left: 47.6%;
+	bottom: 11.4%;
+	width: 82px;
+    height: 52px;
+	padding: 0px 0px 0px 0px;
+	border-width: 0px 0px 0px 0px;
+	background-color: rgba(32, 30, 32, 0.6);
+}
+
+.titre {
+	color: #BA172E;
+}
+
+#textSlider {
+	margin: 0 auto;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px grey;
+	-webkit-box-shadow: -4px 10px 50px 5px #a08b87;
+	width: 83%;
+	height: 40px;
+	line-height: 36px;
+	margin-top: 21px;
+}
+
+#mapID {
+	position: relative;
+	height: 463px;
+    width: 70%;
+}
+
+h2 {
+    font-size: 18px;
+	height: 38px;
+	margin-top: 25px;
+	margin-left: 10px;
+}
+
+.details input {
+	height: 29px;
+	border: none;
+	border-radius: 7px;
+	border-style: inset;
+}
+
+#placeDispo {
+	margin-left: 14px;
+	width: 6%;
+	background-color: beige;
+}
+
+#veloDispo {
+	margin-left: 22px;
+	width: 6%;
+	background-color: beige;
+}
+
+#name {
+	margin-left: 9.5%;
+	width: 42%;
+}
+
+#surname {
+	margin-left: 20px;
+	width: 42%;
+}
+
+#adresse {
+	width: 97%;
+	margin-left: 5px;
+	height: 49px;
+	font-size: 15px;
+	background-color: beige;
+}
+
+.stationAdresse {
+	height: 31px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.details {
+    width: 30%;
+    margin-top: 0px;
+	padding-bottom: 33px;
+    height: 462px;
+    background-color: #faf1fa;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px grey;
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-box-shadow: inset 0px 1px 44px 5px #cb3d22;
+}
+
+.details button {
+    margin: 0 auto;
+    margin-top: 27px!important;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    width: 34%;
+    color: beige;
+    border-radius: 30px;
+    background-color: #BA172E;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#canvasDiv {
+	background-image:url("https://zupimages.net/up/19/49/j69v.jpeg");
+}
+
+#canvas {
+    margin: 0 auto;
+    display: flex;
+    border: 4mm ridge rgb(219, 211, 209);
+    box-shadow: 5px 5px 5px grey;
+	-webkit-box-shadow: -4px 10px 50px 5px #a08b87;
+	background-color:white;
+}
+
+#signature {
+	display: none;
+	margin: 0 auto;
+    margin-top: 23px;
+	margin-bottom: 20px;
+}
+
+#bouttonSigner {
+    margin: 0 auto;
+    margin-top: 13px!important;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    width: 11%;
+    color: beige;
+    border-radius: 30px;
+    background-color: #BA172E;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+footer {
+	margin-top: 50px;
+	font-size: 1rem;
+}
+
+#reservationID {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 18px;
+}
+
+#reservationID input {
+	margin-left: 10px;
+	width: 17%;
+}
+
+#surnameStorage {
+	width: 11rem;
+	border: none;
+}
+
+#nameStorage {
+	width: 11rem;
+	border: none;
+}
+
+#adressStorage {
+	width: 20rem;
+	border: none;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#reservation {
+	width: 97.5%;
+    border: solid 1px grey;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px grey;
+    -webkit-box-shadow: -4px 10px 50px 5px blue;
+	margin-left: 20px;
+	margin-top: 45px;
+}
+
+#legend2 {
+	width:inherit;
+	padding:0 10px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#timer {
+	width: 26%;
+    margin-top: 28px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.fieldset1 {
+	border: 2px solid beige !important;
+	border-radius: 30px;
+	height: 437px;
+}
+
+.fieldset2 {
+    border: 2px solid #BA172E !important;
+	border-radius: 30px;
+	height: 201px;
+	margin-bottom: 38px;
+	margin-left: 10px;
+    margin-right: 10px;
+}
+
+#reservation button {
+	margin: 0 auto;
+    margin-top: 32px !important;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    width: 11%;
+    color: beige;
+    border-radius: 30px;
+    background-color: #BA172E;
+    font-size: 1.25rem;
+    font-weight: bold
+}
+
+#carte legend {
+	text-align: center;
+	width: inherit;
+}
+
+footer a {
+	text-decoration: none !important;
+	color: #BA172E;
+}
+
+.modal-footer>:not(:first-child) {
+	background-color: #BA172E;
+}
+
+#modalBody {
+	position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+
+										/*		   //////////////////////  		 RESPONSIVE         //////////////////////             */
+
+@media screen and (min-width: 200px) and (max-width: 740px) {
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+#adressStorage {
+	width: 90%;
+	margin: auto;
+}
+
+.logo {
+	display: none;
+}
+
+#titreEtMenu {
+	display: inherit;
+}
+
+.menu ul {
+	display: flex;
+    flex-direction: column;
+}
+
+.menu li, ul {
+	padding-left: 0px;
+	box-shadow: 5px 5px 5px grey;
+    -webkit-box-shadow: 2px 11px 100px -4px #a08b87;
+}
+
+header h1 {
+	margin: auto 0;
+}
+
+#mapID {
+    max-height: 50%;
+    width: 100%;
+}
+
+#mapEtFormulaire {
+    display: inherit;
+}
+
+#carte {
+	height: inherit;
+	margin-top: 79px;
+}
+
+#slider img {
+	max-height: 80%;
+	margin-top: 185px;
+}
+
+#diaporama {
+	height: 818px;
+}
+
+header .menu {
+	text-align: center;
+}
+
+#titreEtMenu {
+	max-width: 100%;
+}
+
+.fieldset2 {
+	height: 91%;
+}
+
+.details {
+	width: 100%;
+	margin: auto;
+	height: 476px;
+	padding-bottom: 0px;
+}
+
+.fieldset1 {
+	height: 440px;
+}
+
+.details button {
+	margin-top: 39px!important;
+	width: 48%;
+}
+
+#reservation button {
+	margin-top: 21px !important;
+	width: 52.51%;
+}
+
+#bouttonSigner {
+	width: 55%;
+}
+
+#textSlider {
+	height: 100%;
+	padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#playButton {
+	left: 39%;
+	bottom: 10%;
+	width: 71px;
+}
+
+#pauseButton {
+	left: 39%;
+	bottom: 10%;
+	width: 71px;
+}
+
+#suiv {
+	top: 83.7%;
+	height: 52px;
+}
+
+#prec {
+	top: 83.7%;
+	height: 52px;
+}
+
+#reservation {
+	max-width: 89%;
+	height: 369px;
+}
+
+#reservationID {
+	display: flex;
+	flex-direction: column;
+	margin-top: 0px;
+}
+
+#timer {
+	width: 90%;
+	margin: auto;
+	text-align: center;
+}
+
+#reservationID input {
+    width: 60%;
+	margin: auto;
+}
+
+.details h2 {	
+	margin-left: 10px;	
+}
+
+
+#reservationID h2 {
+	margin: 0px;
+	text-align: center;
+}
+
+#canvas {
+	width: 100%;
+}
+
+#name {
+	margin-left: 15.5%;
+}
+
+#placeDispo {
+	width: 9%;
+}
+
+#veloDispo {
+	width: 9%;
+}
+
+
+
+
+}
+
