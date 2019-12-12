@@ -13,20 +13,24 @@
     <meta name="Keywords" content="Analyse d’audience, Référencement, PageRank, Webmaster ">
     <meta name="Description"
         content="Site de reservation de velo à titre educatif c'est un projet de la formation DWJ d'OpenClassroom">
-    <link href="https://fonts.googleapis.com/css?family=Gupter&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="image/favicon.PNG" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Gupter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="image/favicon.PNG" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin="" />
     <title>VELO CLICK</title>
+    <script src="https://kit.fontawesome.com/4965c6fdf8.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
-        <section id="desktop">
+        <section id="titreEtMenu">
             <img class="logo" src="image/logo.png" alt="logo page d'accueil" />
-            <h1>Bienvenue sur VELO CLICK</h1>
+            <h1 class="mobile">Bienvenue sur VELO CLICK</h1>
             <nav class="menu">
                 <ul>
                     <li>
@@ -42,7 +46,6 @@
             </nav>
         </section>
     </header>
-
 
     <section id="diaporama">
         <div id="slider">
@@ -71,52 +74,79 @@
         <div id="mapEtFormulaire">
             <div id="mapID"></div>
             <div class="details">
-                <fieldset>
+                <fieldset class="fieldset1">
                     <legend>
                         <h1 class="stationDetail">Details de la station</h1>
                     </legend>
                     <h2 class="stationAdresse">Adresse :</h2>
-                    <input id="adresse">
-                    <h2 class="stationPlace">Places dispo :<input id="placeDispo"></h2>
-                    <h2 class="stationVelosDispo">Velos dispo :<input id="veloDispo"></h2>
-                    <h3 class="nom">Nom :<input id="name"></h3>
-                    <h3 class="prenom">Prenom :<input id="surname"></h3>
+                    <textarea id="adresse" readonly></textarea>
+                    <h2 class="stationPlace">Places dispo :<input id="placeDispo" readonly></h2>
+                    <h2 class="stationVelosDispo">Velos dispo :<input id="veloDispo" readonly></h2>
+                    <h2 class="nom">Nom :<input id="name"></h2>
+                    <h2 class="prenom">Prenom :<input id="surname"></h2>
                     <button onclick="booking()">Reserver</button>
                 </fieldset>
             </div>
         </div>
     </section>
-    <div class="signature">
+    <div id="signature">
         <div id="canvasDiv"></div>
         <button id="bouttonSigner" onclick="signer()">Signer</button>
     </div>
     <div id="reservation">
-        <fieldset>
-            <legend>
+        <fieldset class="fieldset2">
+            <legend id="legend2">
                 <div id="titreReservation">
-                    <h1>Votre reservation</h1>
+                    <h1 class="title">Votre reservation</h1>
                 </div>
             </legend>
             <div id="reservationID">
-                <h2 class="nomStorage">Nom :<input id="nameStorage"></h2>
-                <h2 class="prenomStorage">Prenom :<input id="surnameStorage"></h2>
-                <h2 class="stationAdresseStorage">Adresse :<input id="adressStorage"></h2>
+                <h2 class="nomStorage">Nom :</h2><input id="nameStorage" readonly>
+                <h2 class="prenomStorage">Prenom :</h2><input id="surnameStorage" readonly>
+                <h2 class="stationAdresseStorage">Adresse :</h2><textarea id="adressStorage" readonly></textarea>
                 <div id="timer"></div>
             </div>
+            <button onclick="cancell()">Annuler</button>
         </fieldset>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer>
         <p>Ce site est un projet de la formation <a href="https://openclassrooms.com">OpenClassrooms</a></p>
     </footer>
 
-    <script src="https://kit.fontawesome.com/29259b33d5.js" crossorigin="anonymous"></script>
+    <!--<script src="https://kit.fontawesome.com/29259b33d5.js" crossorigin="anonymous"></script>-->
     <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
     <!--<script
   src="https://code.jquery.com/jquery-1.12.4.min.js"
   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
   crossorigin="anonymous"></script>-->
+
     <script src="jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="slider.js" async></script>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
