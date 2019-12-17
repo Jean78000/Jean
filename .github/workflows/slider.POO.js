@@ -1,5 +1,4 @@
 class Slider {
-
     constructor(imagesArray, legendArray, time) {
         this.imagesArray = images;
         this.legendes = legendArray;
@@ -29,8 +28,8 @@ class Slider {
             this.src.src = this.images[this.index];
             this.text.textContent = this.legendes[this.index];
         }
-        this.timer = setTimeout("this.changeImg()", this.time);
-        //this.timer = setTimeout(this.changeImg.bind(this), this.time)    
+        //this.timer = setTimeout("this.changeImg()", this.time);
+        this.timer = setTimeout(this.changeImg.bind(this), this.time)    
     }
 
     suivant() {
@@ -47,6 +46,7 @@ class Slider {
         clearTimeout(this.timer);
         this.timer = setTimeout("this.changeImg()", this.time);
         clearTimeout(this.timer);
+
     }
 
     precedent() {
@@ -65,7 +65,6 @@ class Slider {
         clearTimeout(this.timer);
     }
 
-
     addKeyListener() {
         $(document).keydown(function (e) {
             if (e.keyCode === 37) {
@@ -76,14 +75,9 @@ class Slider {
         });
     }
 }
-    //////////////////////////////////////////////
-    //////////////////////////////////////////////
 
-
-
-window.addEventListener('test', function () {
-
-    const images = ["image/image1.PNG",
+window.addEventListener('load', function () {
+     images = ["image/image1.PNG",
         "image/image2.JPG",
         "image/image3.JPG",
         "image/image4.JPG"];
@@ -91,9 +85,8 @@ window.addEventListener('test', function () {
     var legendes = ['Bienvenue sur VELO CLICK', 'Vous pouvez utiliser les fleches directionelles du clavier', 'Cliquer sur un vélos là oû vous en desirez un', 'Puis remplissez le formulaire pour signer'];
 
     let slider = new Slider(images, legendes, 5000);
-
-}
-
+    slider.changeImg();
+})
 
 
 
