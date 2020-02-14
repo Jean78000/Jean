@@ -1,3 +1,4 @@
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
 
 <?php
@@ -12,7 +13,7 @@ require_once('model/AdminManager.php');
 
 function listPosts($page) {
 
-    $postManager = new PostManager(); // Création d'un objet
+    $postManager = new PostManager(); 
     $numberOfChapters = $postManager->getNumberOfChapters(); 
 
     $numberOfChapterPerPage = 5;  
@@ -21,7 +22,7 @@ function listPosts($page) {
     $start = ($page - 1) * $numberOfChapterPerPage;
     $posts = $postManager->getPosts($start, $numberOfChapterPerPage); 
 
-    require('view/frontend/listPostsView.php');
+    require('view/frontend/blog.php');
 }
 
 function post() {
@@ -32,7 +33,11 @@ function post() {
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
 
+    if ($post) { 
     require('view/frontend/postView.php');
+    }
+    else  //vue error 404
+    { echo "Le chapitre n'existe pas";}
 }
 
 function addPostView() {
@@ -106,11 +111,11 @@ function deleteComment($idComment) {
     require('view/backend/modifierView.php');
 }
 
-function listPostAccueil() {
+//function listPostAccueil() {
 
-    header('Location: index.php?action=listPosts&page=1');
+ //   header('Location: index.php?action=listPosts&page=1');
   //  require('view/frontend/accueil.php');
-}
+//}
 
 function accueil() {
 
@@ -129,7 +134,7 @@ function compare($username, $password) {
 
     if (($_POST['username'] == $admin['pseudo']) && ($_POST['password'] == $admin['password'] )) {
         $_SESSION['admin'] = 'adminCo';
-        require('view/backend/welcomeAdmin.php');
+        require('view/frontend/accueil.php');
     }
     else {?>
     <script>
@@ -140,4 +145,78 @@ function compare($username, $password) {
   <?php require('view/backend/login.php');
     }
 }
+
+//function blogView() {
+//    require('view/frontend/blog.php');
+//}
+
+function aProposView() {
+    require('view/frontend/propos.php');
+}
+
+function register($pseudo, $mdp) {
+    $adminManager = new AdminManager();
+    $admin = $adminManager->subscribe($pseudo, $mdp); 
+
+    require('view/frontend/accueil.php'); ?>
+        <script>
+        $(window).ready(function() {
+            $('#alertSuccess').show();
+        });
+    </script>
+    <?php
+
+}
+
+function logOut() {
+    $_SESSION = array();
+    session_destroy();
+    accueil();
+}
+
+function showReport() {
+    $adminManager = new AdminManager();
+    $reported = $adminManager->getReportList(); 
+
+    require('view/backend/reportList.php');
+}
+
+function report($idComment) {
+    $adminManager = new AdminManager();
+    $reported = $adminManager->doReport($idComment); 
+    
+    $postManager = new PostManager();
+    $commentManager = new CommentManager();
+
+    $post = $postManager->getPost($_GET['id']);
+    $comments = $commentManager->getComments($_GET['id']);
+
+    require('view/frontend/postView.php');
+    ?>
+        <script>
+            $(window).ready(function() {
+                $('#successReport').show();
+            });
+        </script>
+    <?php
+}
+
+function killTheReport($idComment) {
+    $adminManager = new AdminManager();
+    $kill = $adminManager->killReport($idComment);
+
+    $adminManager = new AdminManager();
+    $reported = $adminManager->getReportList(); 
+
+    require('view/backend/reportList.php');
+}
+
+
+
+
+
+
+
+
+
 ?>
