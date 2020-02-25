@@ -226,10 +226,36 @@ class Controller {
         }
 
         public function signalements($idComment, $idUser) {
-            $this->adminManager->getSignalements($idComment, $idUser); 
+
+            $reported = $this->adminManager->countReport($idComment, $idUser);
+            if ($reported == 1) {
+                $post = $this->postManager->getPost($_GET['id']);
+                $comments = $this->commentManager->getComments($_GET['id']);
+                require('view/frontend/postView.php'); ?>
+                <script>
+                    $(window).ready(function() {
+                        $('#failedReport').show();
+                    });
+                </script>
+                <?php
+            } else  {
+                $reported = $this->adminManager->doReport($_GET['idComment']);
+                $report = $this->adminManager->getSignalements($idComment, $idUser);
+                $post = $this->postManager->getPost($_GET['id']);
+                $comments = $this->commentManager->getComments($_GET['id']);
+                require('view/frontend/postView.php'); ?>
+                <script>
+                    $(window).ready(function() {
+                        $('#successReport').show();
+                    });
+                </script>
+                <?php 
+            }  
         }
         
-
+        public function reportIt($idComment, $idUser) {
+            $this->adminManager->signaleIt($idComment, $idUser); 
+        }
 
         public function killTheReport($idComment) {
 
@@ -299,5 +325,6 @@ class Controller {
 }
 
 ?>
+
 
 
