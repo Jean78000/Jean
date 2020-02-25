@@ -55,8 +55,9 @@ class Routes {
                     $this->controller->aProposView();
                 }
                 if ($_GET['action'] == 'signaler') {
-                    $this->controller->report($_GET['idComment']);
+                 //   $this->controller->report($_GET['idComment']);
                     $this->controller->signalements($_GET['idComment'],$_GET['idUser']);
+                  //  $this->controller->reportIt($_GET['idComment'], $_GET['id']);
                 }
                 if ($_GET['action'] == 'seeReport') {
                     $this->controller->showReport();
