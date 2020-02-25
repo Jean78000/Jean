@@ -42,6 +42,26 @@ class AdminManager extends Manager {
     
     }
 
+    public function signaleIt($idComment, $idUser) {
+
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE signalements SET reported = reported + 1 WHERE id_comment = ? AND id_user = ?');
+        $req->execute(array($idComment, $idUser));
+
+        return $req;
+    }
+
+    public function countReport($idComment, $idUser) {
+
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT COUNT(*) FROM signalements WHERE id_comment = ? AND id_user = ?'); 
+        $req->execute(array($idComment, $idUser));
+        $reportOrNot = $req->fetch(\PDO::FETCH_COLUMN);
+        
+        return $reportOrNot;
+    }
+    
+
     public function getReportlist() {
 
         $db = $this->dbConnect();
