@@ -8,7 +8,7 @@
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<div id="isAlreadyReport" class="alert alert-danger alert-dismissible" role="alert">
+<div id="failedReport" class="alert alert-danger alert-dismissible" role="alert">
   <strong>Vous avez deja signaler ce commentaire</strong>
     <button type="button" class="close" data-dismiss="alert">
         <span aria-hidden="true">&times;</span>
@@ -52,7 +52,7 @@ while ($comment = $comments->fetch()) { ?>
 
             <?php
             var_dump($_SESSION);
-            $_SESSION['report'] = null;
+           // $_SESSION['report'] = null;
             if (!isset($_SESSION['user'])) {
                 $_SESSION['user'] = null;
             }
@@ -60,10 +60,9 @@ while ($comment = $comments->fetch()) { ?>
 
                 <a href="index.php?action=modifierView&amp;id=<?=$post['id']?>&amp;idComment=<?=$comment['id']?>"class="btn btn-outline-secondary"><i class="fas fa-edit"></i>Modifier</a>
                 <a href="index.php?action=delete&amp;id=<?=$post['id']?>&amp;idComment=<?=$comment['id']?>"class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i>Supprimer</a>
-                <?php } ?>
-           <?php  
-           //if ($_SESSION['report'] != $comment['id']) { 
-               if ((isset($_SESSION['user'])) OR (isset($_SESSION['admin']))) { ?>
+                <?php }
+
+               if (isset($_SESSION['user']))   { ?>
                 <a href="index.php?action=signaler&amp;id=<?=$post['id']?>&amp;idComment=<?=$comment['id']?>&amp;idUser=<?=$_SESSION['signalement']?>"class="btn btn-outline-info"><i class="fas fa-flag"></i></i>Signaler</a>
             <?php } ?>
         </div>
@@ -97,4 +96,6 @@ if (isset($_SESSION['user']) OR isset($_SESSION['admin'])) { ?>
 <?php $content = ob_get_clean();?>
 
 <?php require('view/template.php'); ?>
+
+
 
