@@ -1,0 +1,810 @@
+                                                            /* *** *** *** DESKTOP *** *** *** */
+
+html {
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Josefin Slab', Arial, sans-serif;
+    text-align: center;
+    background-image: url('../images/background.jpeg');
+    background-size: 100%;  
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+footer {
+    color: white;
+    opacity: 0.55;
+    position: absolute;
+    bottom: -80px;
+    margin: 0 auto;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+h3 {
+    color:white;
+    font-size: 0.9em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+.news p {
+    background-color:#CCCCCC;
+    margin-bottom: 50px;
+    height: 215px;
+    margin: 0 auto;
+}
+
+#editPostLien {
+    color: blue;
+}
+
+#addPost {
+    color: green;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+.news {
+    width: 1050px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+                                                            /* Ajouter article */
+
+#addPostForm {
+    height: 126vh;
+}
+
+#formAddPost {
+    height: 126vh;
+}
+
+#addPostViewButtonAdd {
+    width: 10%;
+}
+
+#prevButtonAddPostView {
+    margin-top: 22px;
+    margin-bottom: 22px;
+}                                                            
+
+#mytextarea {
+    height: 100vh;
+}
+
+.fas {
+    padding-right: 5px;
+}
+
+.carousel-item, .carousel-inner, .carousel-inner img {
+    height: 100vh;
+}
+                                                            /* Modifier Post Form */
+
+#modifyPostForm {
+    height: 100%;
+}
+
+#modifyPostBackButton {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#editPostButton {
+    width: 10%;
+}
+                                                            /* Modifier Comment Form */
+    
+#submitModifyComment  {
+    width: 10%;
+}                                 
+
+                                                            /* Page Article */
+#deletePostButton  {
+        border: none;
+        padding: 6px 0 6px 0;
+        border-radius: 8px;
+        background:#d34836;
+        font: bold 13px Arial;
+        color:#fff;
+}
+
+.news a {
+    margin-top: 25px;
+    color: black;
+}
+
+#formUpdatePost input {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+
+                                                            /* Roles */
+
+#rolesAccueilButton {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}                                                            
+
+.table {
+    background-color: white;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#verticaleMiddle {
+    height: 15vh;
+}
+
+#rolesButtons {
+    width: 45%;
+}
+
+
+                                                            /* Page Blog */
+
+#reportButton {
+    width: 10%;
+    position: absolute;
+    right: 4%;
+    top: 7%;
+}
+
+#roleButton {
+    width: 10%;
+    position: absolute;
+    right: 4%;
+    top: 10%;
+    z-index: 1000;
+}
+
+#addPostButton {
+    width: 10%;
+    position: absolute;
+    right: 4%;
+    top: 4%;
+}
+
+#decoButton {
+    position: absolute;
+    right: 4%;
+    top: 1%;
+    width: 10%;
+}
+
+#backAccueil {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#pagin {
+    padding-bottom: 40px;
+}
+
+#pagin a {
+    color: white;
+}
+                                                                /* PostView */
+#postViewBackButton {
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+#postViewTitle {
+    color: white;
+}
+
+#postViewSubTitle {
+    color: white;
+}
+
+#blogTitle {
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#blogP {
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}  
+
+#postComments p {
+    color: white;
+}
+                                                            /* send comment form */
+
+#sendCommentForm {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #ddc6b5;
+}
+
+#sendCommentForm input {
+    height: 43px;
+    margin: auto 0;
+    width: 25%;
+}
+
+.border.p-2 {
+    height: 323px;
+}
+
+.w-auto {
+    margin: 0 auto;
+    font-size: 24px;
+}
+
+#author {
+    height: 29px;
+    margin: 0 auto;
+}
+
+#labelAuthor {
+    margin: auto 0;
+}
+                                                            /* Report Comment List */
+
+
+#reportedComment {
+    margin-top: 40px;
+    margin-bottom: 50px!important;
+    background: #ddc6b5;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 15px;
+    line-height: 7px;
+}                                                           
+
+#reportListButton {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+}
+
+#reportedComment h2 {
+    font-size: 1.5rem;
+    padding-top: 10px;
+}
+
+#reportedComment p {
+    margin-bottom: 2rem;
+}
+
+.reportListTitle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#reportListAccueilButton {
+    margin-bottom: 20px;
+}
+
+
+                                                            /* Post and Comments View */
+
+#report_author {
+    text-align: center;
+    width: 20%;
+}
+
+#report_comment {
+    width: 80%;
+    height: 4.5rem;
+}
+
+#postAndCommentsView h3 {
+    padding-top: 20px;
+}
+
+#commentDiv {
+    margin-top: 40px;
+    margin-bottom: 50px!important;
+    background: #ddc6b5;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+#postAndCommentsView {
+    width: 60%;
+    height: 50%;
+    background-color: #ddc6b5;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+
+                                                                /* menu ACCUEIL */
+
+.menu {
+    height: 70vh;
+    padding: 0px;
+    margin: 20px 0 10px 0;
+    position: relative;
+}
+
+.menu li {
+    margin-bottom: 50px;
+    font-size: 45px;
+    display: block;
+}
+
+.menu li a {
+    text-decoration: none;
+	white-space: nowrap;
+	color: #aaaa65;
+	display: block;
+	text-transform: uppercase;
+	text-align: center;
+	text-shadow: 0px 0px 6px #fff;
+	letter-spacing: 1px;
+	-moz-transform: scale(0.5); 
+	-ms-transform: scale(0.5); 
+	-o-transform: scale(0.5); 
+	-webkit-transform: scale(0.5); 
+	transform: scale(0.5); 
+	-webkit-transition: all 0.6s linear;
+	-moz-transition: all 0.6s linear;
+	-o-transition: all 0.6s linear;
+	-ms-transition: all 0.6s linear;
+	transition: all 0.6s linear;
+}
+
+.menu:hover li a {
+	text-shadow: 0px 0px 15px #fff;
+}
+
+.menu li a:hover {
+	text-shadow: 0px 0px 1px #fff;
+	-moz-transform: scale(1); 
+	-ms-transform: scale(1); 
+	-o-transform: scale(1); 
+	-webkit-transform: scale(1); 
+	transform: scale(1); 
+}
+
+.titreAccueil {
+    opacity: 0.55;
+    color: white;
+    font-size: 2em;
+}
+
+#accueilTitle:hover {
+    opacity: 1;
+}
+
+h1.titreAccueil {
+    margin-top: 20px;
+}
+
+                                                                /* Page Login */
+
+
+
+#emailSubscribe {
+    background-color: #3275cb1f;
+}                                                                
+
+#submit {
+    width: 50%;
+    margin-top: 65px;
+}
+
+#subscribe {
+    width: 50%;
+}
+
+#back {
+    margin-top: 20px;
+}
+
+#container {
+    width:400px;
+    position: absolute;
+    right: 10%;
+    margin:0 auto;
+    top: 30%;
+    background: #67BE4B;
+}
+
+form {
+    height: 450px;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 50%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+                                                               
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: #53af57;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type=submit]:hover {
+    background-color: white;
+    color: #53af57;
+    border: 1px solid #53af57;
+}
+
+
+                                                            /* Welcome Admin */
+.shadow-lg {
+    border: 1px solid black;
+    border-radius: 15px!important;
+    width: 80%;
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+                                                        /* Alerte bootstrap */
+
+#alertLogin {
+    display: none;
+}
+
+#adminLogin {
+    display: none;
+}
+
+#userLogin {
+    display: none;
+}
+
+#alertSuccess {
+    display: none;
+}
+
+#isAlreadyReport {
+    display: none;
+}
+
+#successReport {
+    display: none;
+}
+
+#mailAlert {
+    display: none;
+}
+
+#failedReport {
+    display: none;
+}
+
+#pseudoExist {
+    display: none;
+}
+
+#proposAccueilBtn {
+    display: none;
+}
+
+                                                                    /* Welcome Admin menu */
+
+.menu-admin {
+    border-radius: 15px;
+    margin: 0 auto!important;
+    width: 300px; 
+    list-style: none; 
+    padding: 4px; 
+    margin: 0; 
+    background: #F2F2F2;
+    opacity: 0.8;
+    font-weight: bold;
+}
+   
+.ma-item, .ma-item a {
+    display: block;
+}
+   
+.ma-item a {
+    font-size: 1.5rem;
+    margin: 1px 0; 
+    padding: 8px 20px; 
+    color: #666;
+    background: #FFF;
+    text-decoration: none; 
+    -webkit-transition: all .3s; 
+    -moz-transition: all .3s; 
+    transition: all .3s; 
+}
+   
+.ma-item a:hover, .ma-item a:focus {
+    background: #FFDEAD;
+    color: #FFF;
+    padding-left: 30px; 
+}
+
+#dernierTitreAdmin {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    background: none;
+}
+
+                                                            /* Contact Form */
+
+#contactForm {
+    width: 50%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 10px;
+}
+
+
+
+.contactFormLabel {
+    width: 100%;
+    margin-top: 10px;
+}
+
+input.contactFormInput {
+    width: 40%;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+}
+
+#contactSubmit {
+    width: 25%;
+    height: 35px;
+    padding: 0;
+}
+
+#contactAccueilButton {
+    margin-top: 20px;
+}
+
+.formContactTitle {
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#myContactBody {
+    height: 70vh;
+}
+                                                            /* Page 404 */
+
+#myBody3 {
+    color: white;
+    height: 88vh;
+}                                                            
+
+#myBody3 h1 {
+    margin-left: -50px;
+    font-size: 16rem;
+}
+
+#myBody3 p {
+    margin: 0 auto;
+    font-size: 2rem;
+    margin-top: 50px;
+}
+
+
+                                                    /* *** *** *** RESPONSIVE *** *** *** */
+
+
+@media only screen and (max-width: 720px) {
+
+footer {
+    position: absolute;
+    bottom: -13%;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.news p {
+    width: 95%;
+    margin-bottom: 0px;
+    height: 100%;
+}
+
+.news {
+    margin-bottom: 100px;
+}
+
+.body {
+    background: no-repeat;
+
+}
+
+#bodyMobileAccueil {
+    height: 80vh;
+}
+
+h1.titreAccueil {
+    margin-top: 65px;
+}
+
+#decoButton {
+    position: static;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 60%;
+}
+
+#backAccueil {
+    position: static;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 60%;
+}
+
+#addPostButton {
+    position: static;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 60%;
+}
+
+#reportButton {
+    position: static;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 60%;
+}
+
+#roleButton {
+    position: static;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 60%;
+}
+
+#postAndCommentsView {
+    width: 95%;
+}
+
+#commentDiv {
+    width: 95%;
+}
+
+#contactForm {
+    width: 90%;
+}
+
+input.contactFormInput {
+    width: 80%;
+}
+
+#contactContent {
+    width: 90%;
+}
+
+#myContactBody {
+    height: 45vh;
+}
+
+.container form {
+    width: 90%;
+}
+
+#container {
+    color: blue;
+}
+
+#container2 {
+    width: 400px;
+    padding-top: 5px;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+#back {
+    margin-top: 20px;
+}
+
+#subscribe {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#submit {
+    margin-top: 20px;
+}
+
+#loginForm {
+    height: 380px;
+}
+
+#reportedComment {
+    width: 90%;
+}
+
+#reportListButton a {
+    width: 50%;
+    height: 55px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#reportListDelButton {
+    padding-top: 15px;
+}
+
+#reportedComment p {
+    line-height: normal;
+}
+
+#myBody {
+    height: 100%
+}
+
+.mail {
+    display: none;
+}
+
+#spanRoles {
+    display: none;
+}
+
+#rolesButtons {
+    width: 100%;
+}
+
+#proposAccueilBtn {
+    display: block;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+
+
+}
